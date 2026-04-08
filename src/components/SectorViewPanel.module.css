@@ -1,0 +1,109 @@
+.panelContainer {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--glass-border);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.4s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+.empty {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-dark);
+  border: 2px dashed rgba(0, 45, 98, 0.15);
+  background: rgba(248, 249, 250, 0.5);
+  box-shadow: none;
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+.empty h3 {
+  margin: 0 0 0.5rem 0;
+  color: #343a40;
+}
+
+.empty p {
+  color: #868e96;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  background-color: #e9ecef;
+}
+
+.viewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.panelContainer:hover .viewImage {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.badge {
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.5px;
+}
+
+.info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.info h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.desc {
+  margin: 0;
+  color: #495057;
+  line-height: 1.6;
+  flex: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
