@@ -1,0 +1,94 @@
+.mapContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 3360 / 3084;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  background: #f8f9fa;
+  touch-action: manipulation;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.svgField {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: multiply; /* Helps the highlights sit nicely over the image */
+}
+
+.sector {
+  cursor: pointer;
+  fill: transparent;
+  stroke: transparent;
+  stroke-linejoin: round; /* 💡 선이 꺾이는 모서리를 둥글고 부드럽게 처리 */
+  stroke-linecap: round;
+  transition: all 0.15s ease-out;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.sector:hover {
+  stroke: rgba(0, 0, 0, 0.8);
+  stroke-width: 5px; /* 얇은 테두리로 수정 */
+  fill: rgba(0, 0, 0, 0.1); 
+}
+
+.sector.active {
+  stroke: #000000;
+  stroke-width: 7px; /* 얇은 엑티브 테두리 */
+  fill: rgba(0, 0, 0, 0.2);
+}
+
+.tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  z-index: 10;
+  pointer-events: none;
+  animation: bounce 2s infinite;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.tooltipIcon {
+  font-size: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, -50%); }
+  50% { transform: translate(-50%, -60%); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}

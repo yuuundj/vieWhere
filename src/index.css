@@ -20,7 +20,8 @@
 }
 
 *, *::before, *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* 앱 전체 터치 하이라이트 박스 영구 제거 */
 }
 
 body {
